@@ -1,0 +1,23 @@
+/* Add application styles & imports to this file! */
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+p {
+  font-family: Lato;
+}
+.active {
+  color: blue;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: '. .';
+
+  font-family: 'Roboto', sans-serif;
+}

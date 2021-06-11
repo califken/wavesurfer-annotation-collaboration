@@ -1,0 +1,37 @@
+<div class="grid-container">
+  <div id="wave-wrapper" style="width: 100%">
+
+    <div id="waveform"></div>
+    <div id="wave-timeline"></div>
+
+    {{progress}}
+    <br>Zoom <i class="pi pi-search-minus"></i>
+    <input type="range"
+ min="1"
+ max="100"
+ step="1"
+ [ngModel]="zoom"
+ (ngModelChange)="zoomChange($event)"
+  ><i class="pi pi-search-plus"></i>
+    Volume <i (click)="mute()" class="pi pi-volume-down" [ngClass]="{'active': isMuted}"></i>
+    <input type="range" [ngStyle]="{'opacity':isMuted?'.5':'1'}"
+ min="0"
+ max="1"
+ step="0.01"
+ [ngModel]="volume"
+ (ngModelChange)="volumeChange($event)"
+ ><i (click)="mute()" class="pi pi-volume-up" [ngClass]="{'active': isMuted}"></i>
+ 
+    {{volume}}
+
+  </div>
+
+  <div>
+    <ul class="list-group">
+      <li *ngFor="let region of regions" class="list-group-item"
+        [ngStyle]="{'border-left': '14px solid ' + region['color']}" [ngClass]="{'active':region.attributes.active}">{{
+        region['data'].note }}</li>
+    </ul>
+
+  </div>
+</div>
